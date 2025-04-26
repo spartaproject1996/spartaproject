@@ -1,0 +1,189 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>S.P.A.R.T.A.</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+            background: #f0f2f5;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            background: url('/mnt/data/1b183622-5a47-4c2b-8d89-5730384139ea.png') no-repeat center center/contain;
+            background-color: #000; /* fallback background */
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+            .hero::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.4); /* slight dark overlay for readability */
+                z-index: 0;
+            }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            animation: fadeIn 2s ease-out forwards;
+            opacity: 0;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            animation: fadeInDown 1s ease-out forwards;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 10px;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+        }
+
+        .hero button {
+            padding: 12px 24px;
+            font-size: 1em;
+            background-color: #0057b8;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            animation: fadeInUp 1.5s ease-out forwards;
+            opacity: 0;
+        }
+
+            .hero button:hover {
+                background-color: #0041a8;
+            }
+
+        /* About Section */
+        .about {
+            display: flex;
+            background-color: #0057b8;
+            color: white;
+            padding: 80px 20px;
+            gap: 40px;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+            .about.visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        .apps {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+            .apps img {
+                width: 60px;
+                height: 60px;
+                cursor: pointer;
+                transition: transform 0.3s;
+            }
+
+                .apps img:hover {
+                    transform: scale(1.2);
+                }
+
+        .about-text {
+            max-width: 600px;
+            text-align: left;
+        }
+
+        .about h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>S.P.A.R.T.A.</h1>
+            <p>Scutul Protecției Anti-Pedofiliei în Rețelele și Activitățile Online</p>
+            <button onclick="document.getElementById('about').scrollIntoView({ behavior: 'smooth' });">
+                Learn More
+            </button>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="apps">
+            <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046120.png" alt="TikTok Logo" title="TikTok"></a>
+            <a href="https://discord.gg/cUdjgKKfbv" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png" alt="Discord Logo" title="Discord"></a>
+            <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/
